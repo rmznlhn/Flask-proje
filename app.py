@@ -1,15 +1,16 @@
+import os
 from flask import Flask, render_template, request
 
 uygulama = Flask(__name__)
 
-isimler = []  # Kullanıcıların girdiği isimleri saklayacak liste
+isimler = []
 
 @uygulama.route("/", methods=["GET", "POST"])
 def anasayfa():
     if request.method == "POST":
         yeni_isim = request.form.get("isim")
         if yeni_isim:
-            isimler.append(yeni_isim)  # Listeye ekle
+            isimler.append(yeni_isim)
     return render_template("index.html", isimler=isimler)
 
 if __name__ == "__main__":
