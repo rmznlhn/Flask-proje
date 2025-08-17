@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İsim Listesi</title>
+</head>
+<body>
+    <h1>Flask ile İsim Kaydetme</h1>
+
+    <form method="POST">
+        <input type="text" name="isim" placeholder="İsminizi yazın">
+        <button type="submit">Kaydet</button>
+    </form>
+
+    <h2>Kaydedilen İsimler:</h2>
+    <ul>
+        {% for isim in isimler %}
+            <li>{{ isim }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
